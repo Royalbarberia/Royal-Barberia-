@@ -1,19 +1,19 @@
 function updateBarbers() {
-    var branch = document.getElementById('branch').value;
+    var branch = document.getElementById('bra').value;
     var barberSelect = document.getElementById('barber');
     barberSelect.innerHTML = '';
 
     var barbers = [];
     if (branch === 'Udi') {
         barbers = [
-            { value: 'Ruben_Torrico', text: 'Ruben Torrico' },
-            { value: 'Osvaldo_Carapi', text: 'Osvaldo Carapi' }
+            { value: 'Ruben Torrico', text: 'Ruben Torrico' },
+            { value: 'Osvaldo Carapi', text: 'Osvaldo Carapi' }
         ];
     } else if (branch === 'Chonta') {
         barbers = [
-            { value: 'Diego_Suarez', text: 'Diego Suarez' },
-            { value: 'Martin_Torrico', text: 'Martin Torrico' },
-            { value: 'Mario_Carapi', text: 'Mario Carapi' }
+            { value: 'Diego Suarez', text: 'Diego Suarez' },
+            { value: 'Martin Torrico', text: 'Martin Torrico' },
+            { value: 'Mario Carapi', text: 'Mario Carapi' }
         ];
     }
 
