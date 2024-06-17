@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #222;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+.service, .reservation-form, .barbers {
+    background-color: white;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.service h3, .reservation-form h2, .barbers h2, .contact h2 {
+    color: #222;
+}
+.reservation-form input, .reservation-form select, .reservation-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+.reservation-form button {
+    background-color: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.reservation-form button:hover {
+    background-color: #555;
+}
+.barber {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    text-align: center;
+}
+.barber img {
+    width: 100%;
+    border-radius: 50%;
+}
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

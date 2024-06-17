@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Barbería</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer>
+        function updateBarbers() {
+            const barbers = {
+                Udi: [
+                    { name: "Ruben Torrico", value: "ruben_torrico" },
+                    { name: "Osvaldo Carapi", value: "osvaldo_carapi" }
+                ],
+                Chonta: [
+                    { name: "Diego Suárez", value: "diego_suarez" },
+                    { name: "Martin Torrico", value: "martin_torrico" },
+                    { name: "Mario Carapi", value: "mario_carapi" }
+                ]
+            };
+            
+            const branchSelect = document.getElementById('branch');
+            const barberSelect = document.getElementById('barber');
+            const selectedBranch = branchSelect.value;
+            
+            barberSelect.innerHTML = '<option value="" disabled selected>Selecciona un barbero</option>';
+            
+            if (barbers[selectedBranch]) {
+                barbers[selectedBranch].forEach(barber => {
+                    const option = document.createElement('option');
+                    option.value = barber.value;
+                    option.textContent = barber.name;
+                    barberSelect.appendChild(option);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Royal Barbería</h1>
+        <nav>
+            <ul>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#barbers">Barberos</a></li>
+                <li><a href="#reservation">Reservar</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="services">
+            <h2>Servicios</h2>
+            <div class="service">
+                <h3>Corte senior</h3>
+                <p>Disfruta de un corte de pelo profesional y moderno.</p>
+                <p><strong>Precio:</strong> Bs80</p>
+            </div>
+            <div class="service">
+                <h3>Corte junior</h3>
+                <p>Afeitado tradicional con toalla caliente y productos de alta calidad.</p>
+                <p><strong>Precio:</strong> Bs80</p>
+            </div>
+            <div class="service">
+                <h3>Perfilado de Barba</h3>
+                <p>Perfilado tradicional con toalla caliente y productos de alta calidad.</p>
+                <p><strong>Precio:</strong> Bs60</p>
+            </div>
+            <div class="service">
+                <h3>Combo senior</h3>
+                <p>Perfilado tradicional con toalla caliente y productos de alta calidad.</p>
+                <p><strong>Precio:</strong> Bs130</p>
+            </div>
+            <div class="service">
+                <h3>Combo Full</h3>
+                <p>Perfilado tradicional con toalla caliente y productos de alta calidad.</p>
+                <p><strong>Precio:</strong> Bs150</p>
+            </div>
+            <div class="service">
+                <h3>Perfilado de cejas</h3>
+                <p>Perfilado tradicional con toalla caliente y productos de alta calidad.</p>
+                <p><strong>Precio:</strong> Bs30</p>
+            </div>
+            <div class="service">
+                <h3>Perfilado de contorno</h3>
+                <p>Perfilado tradicional con toalla caliente y productos de alta calidad.</p>
+                <p><strong>Precio:</strong> Bs30</p>
+            </div>
+            <div class="service">
+                <h3>Martes de promo</h3>
+                <p>Perfilado tradicional con toalla caliente y productos de alta calidad.</p>
+                <p><strong>Precio:</strong> Bs60</p>
+            </div>
+        </section>
+
+        <section id="barbers">
+            <h2>Barberos</h2>
+            <div id="barbers-Udi" class="barbers">
+                <h3>Sucursal Udi</h3>
+                <div class="barber">
+                    <img src="ruben.jpg" alt="Ruben Torrico">
+                    <h3>Ruben Torrico</h3>
+                </div>
+                <div class="barber">
+                    <img src="osvaldo.jpg" alt="Osvaldo Carapi">
+                    <h3>Osvaldo Carapi</h3>
+                </div>
+            </div>
+            <div id="barbers-Chonta" class="barbers">
+                <h3>Sucursal Chonta</h3>
+                <div class="barber">
+                    <img src="diego.jpg" alt="Diego Suárez">
+                    <h3>Diego Suárez</h3>
+                </div>
+                <div class="barber">
+                    <img src="martin.jpg" alt="Martin Torrico">
+                    <h3>Martin Torrico</h3>
+                </div>
+                <div class="barber">
+                    <img src="mario.jpg" alt="Mario Carapi">
+                    <h3>Mario Carapi</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservation">
+            <h2>Reservar Cita</h2>
+            <form class="reservation-form" action="https://formspree.io/f/xwkgdzbo" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="whatsapp">Número de WhatsApp:</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required>
+
+                <label for="branch">Sucursal:</label>
+                <select id="branch" name="branch" onchange="updateBarbers()" required>
+                    <option value="" disabled selected>Selecciona una sucursal</option>
+                    <option value="Udi">Udi</option>
+                    <option value="Chonta">Chonta</option>
+                </select>
+                
+                <label for="barber">Barbero:</label>
+                <select id="barber" name="barber" required>
+                    <option value="" disabled selected>Selecciona un barbero</option>
+                </select>
+                
+                <label for="service">Servicio:</label>
+                <select id="service" name="service" required>
+                    <option value="senior_court">Corte Senior</option>
+                    <option value="junior_cut">Corte Junior</option>
+                    <option value="beard_profiling
+">Perfilado de Barba</option>
+                    <option value="senior_combo
+">Combo Senior</option>
+                    <option value="full_combo
+">Combo Full</option>
+                    <option value="eyebrow_shaping
+">Perfilado de Cejas</option>
+                    <option value="contour_profiling
+">Perfilado de Contorno</option>
+                </select>
+                
+                <label for="date">Fecha:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Hora:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contacto</h2>
+            <p><strong>Sucursal Udi:</strong> Av. Banzer entre 5to y 6to anillo detras de la universidad udi, condominio Estudiante local 2</p>
+            <p><strong>Teléfono Centro:</strong> +591 69251717</p>
+            <p><strong>Sucursal Norte:</strong> Chonta km 8/5 al norte entrada Mainter diagonal al condominio colonial norte (lado tieda Tada)</p>
+            <p><strong>Teléfono Norte:</strong> +591 62087170</p>
+            <p><strong>Email:</strong> info@royalbarberia.com</p>
+        </section>
+    </div>
